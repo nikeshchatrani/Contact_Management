@@ -1,0 +1,23 @@
+<div *ngIf="contact" class="contact-detail">
+	<h2>Edit Contact</h2>
+	<label>First name:
+	  <input [(ngModel)]="contact.firstName" placeholder="first name">
+	</label>
+	<label>Last name:
+	  <input [(ngModel)]="contact.lastName" placeholder="last name">
+	</label>
+	<label>Email:
+	  <input type="email" [(ngModel)]="contact.email" placeholder="email">
+	</label>
+	<label>Phone number:
+	  <input type="tel" [(ngModel)]="contact.phoneNumber" placeholder="phone">
+	</label>
+	<label>Status:
+		<input type="radio" value="active" name="status" [(ngModel)]="contact.status">Active
+		<input type="radio" value="inactive" name="status" [(ngModel)]="contact.status">Inactive
+	</label>
+	<div class="action-buttons">
+		<button type="button" (click)="goBack()">Go Back</button>
+		<button type="button">Save</button>
+	</div>
+</div>
