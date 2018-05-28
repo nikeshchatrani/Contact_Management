@@ -3,7 +3,7 @@
 		<h2>Contact List</h2>
 	</div>
 	<div class="addContact">
-		<button type="button">Add Contact</button>
+		<a (click)="showAddContact(showOnAdd)" routerLink="/add">Add Contact</a>
 	</div>
 </div>
 <div class="table">
@@ -23,7 +23,7 @@
  			<td>{{ contact.email }}</td>
  			<td>{{ contact.phoneNumber }}</td>
  			<td>{{ contact.status }}</td>
- 			<td><a routerLink="/detail/{{contact.id}}" (click)="onSelect(contact)">Edit</a><a>Delete</a></td>
+ 			<td><a routerLink="/detail/{{contact.id}}" (click)="onSelect(contact)">Edit</a><a (click)="delete(contact)">Delete</a></td>
  		</tr>
  	</tbody>
 <!-- <ul class="heroes">
@@ -40,6 +40,7 @@
 </div>
 
 <app-contact-detail [contact]="selectedContact"></app-contact-detail>
+<app-contact-add></app-contact-add>
 
 
 	<!-- <label>First name:

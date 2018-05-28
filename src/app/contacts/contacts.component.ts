@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { showOnAdd } from '../contact-add';
 import { Contacts } from '../contacts'
 import { ContactService } from '../contact.service';
 
@@ -10,8 +11,8 @@ import { ContactService } from '../contact.service';
 export class ContactsComponent implements OnInit {
 	
 	selectedContact: Contacts;
-	contacts : Contacts[];
-
+	contacts : Contacts[] = [];
+  showOnAdd : false;
 	
 
   constructor(private contactService: ContactService) { }
@@ -27,6 +28,15 @@ export class ContactsComponent implements OnInit {
   getContacts(): void {
     this.contactService.getContacts()
         .subscribe(contacts => this.contacts = contacts);
+  }
+
+  delete(contact: Contacts): void {
+    this.contacts = this.contacts.filter(h => h !== contact);
+    this.contactService.deleteContact(contact).subscribe();
+  }
+
+  showAddContact(flag: showOnAdd): void{
+    this.showOnAdd = flag;
   }
 
 }
