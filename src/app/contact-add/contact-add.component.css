@@ -1,0 +1,58 @@
+.contact-add, .form-wrapper{
+	width: 100%;
+	overflow: hidden;
+}
+.form-wrapper label{
+	display: inline-block;
+	width: 50%;
+	margin-bottom: 20px;
+}
+
+.form-wrapper label input{
+	padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-wrapper label span{
+	display: inline-block;
+	width:120px;
+	color:#212529;
+}
+
+.action-buttons{
+	margin-top:20px;
+	float: right;
+}
+
+.action-buttons button{
+	overflow: visible;
+	text-transform: none;
+	-webkit-appearance: button;
+	display: inline-block;
+	width: 100px;
+    height: auto;
+    background: #4E9CAF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    border-color: transparent;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-family: sans-serif;
+    white-space: nowrap;
+    vertical-align: middle;
+    line-height: 1.5;
+    margin:0px 10px;
+}
+
+.action-buttons button.go-back{
+	background: #666666;
+}

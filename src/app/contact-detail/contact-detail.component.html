@@ -1,23 +1,25 @@
 <div *ngIf="contact" class="contact-detail">
 	<h2>Edit Contact</h2>
-	<label>First name:
-	  <input [(ngModel)]="contact.firstName" placeholder="first name">
-	</label>
-	<label>Last name:
-	  <input [(ngModel)]="contact.lastName" placeholder="last name">
-	</label>
-	<label>Email:
-	  <input type="email" [(ngModel)]="contact.email" placeholder="email">
-	</label>
-	<label>Phone number:
-	  <input type="tel" [(ngModel)]="contact.phoneNumber" placeholder="phone">
-	</label>
-	<label>Status:
-		<input type="radio" value="active" name="status" [(ngModel)]="contact.status">Active
-		<input type="radio" value="inactive" name="status" [(ngModel)]="contact.status">Inactive
-	</label>
+	<div class="form-wrapper">
+		<label><span>First name:</span>
+		  <input [(ngModel)]="contact.firstName" placeholder="first name">
+		</label>
+		<label><span>Last name:</span>
+		  <input [(ngModel)]="contact.lastName" placeholder="last name">
+		</label>
+		<label><span>Email:</span>
+		  <input type="email" [(ngModel)]="contact.email" placeholder="email">
+		</label>
+		<label><span>Phone number:</span>
+		  <input type="tel" [(ngModel)]="contact.phoneNumber" placeholder="phone">
+		</label>
+		<label><span>Status:</span>
+			<input type="radio" value="active" name="status" [(ngModel)]="contact.status">Active
+			<input type="radio" value="inactive" name="status" [(ngModel)]="contact.status">Inactive
+		</label>
+	</div>
 	<div class="action-buttons">
-		<button type="button" (click)="goBack()">Go Back</button>
+		<button type="button" class="go-back" (click)="goBack()">Go Back</button>
 		<button type="button" (click)="save()">Save</button>
 	</div>
 </div>

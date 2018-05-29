@@ -1,0 +1,86 @@
+.heading{
+	float: left;
+}
+
+.heading h2{
+	margin-top:0;
+}
+
+.addContact{
+	float: right;
+}
+
+.addContact a{
+	display: block;
+    width: 115px;
+    height: 20px;
+    background: #4E9CAF;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.top-bar, .tableWrapper{
+	float: left;
+	width: 100%;
+}
+
+.tableWrapper{
+	position: relative;
+    padding: 1rem;
+    margin: 1rem -15px 0;
+}
+
+
+
+.table {
+	border-collapse: collapse;
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+    background-color: transparent;
+}
+
+th {
+    text-align: inherit;
+}
+
+.table td, .table th {
+    padding: .75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.status-value{
+	text-transform: capitalize;
+}
+
+.action-links a{
+	display: inline-block;
+	height: auto;
+	overflow: hidden;
+	margin:0 10px;
+	cursor: pointer;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.tableWrapper::after {
+    display: block;
+    clear: both;
+    content: "";
+}
+
+@media (min-width: 575px)
+.tableWrapper {
+    padding: 1.5rem;
+    margin-right: 0;
+    margin-left: 0;
+    border-width: .2rem;
+}

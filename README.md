@@ -1,4 +1,11 @@
-# MyApp
+# Contact Manangement Project Setup
+
+Clone the repository from the url: https://github.com/nikeshchatrani/Contact_Management.git
+
+
+Install Node.js® and npm if they are not already on your machine.
+
+Verify that you are running at least Node.js version 8.x or greater and npm version 5.x or greater by running node -v and npm -v in a terminal/console window. Older versions produce errors, but newer versions are fine.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
 

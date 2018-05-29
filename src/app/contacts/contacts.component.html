@@ -3,11 +3,11 @@
 		<h2>Contact List</h2>
 	</div>
 	<div class="addContact">
-		<a (click)="showAddContact(showOnAdd)" routerLink="/add">Add Contact</a>
+		<a routerLink="/add">Add Contact</a>
 	</div>
 </div>
-<div class="table">
- <table>
+<div class="tableWrapper">
+ <table class="table">
  	<thead>
  		<tr>
  			<th>Contact Name</th>
@@ -22,36 +22,12 @@
  			<td>{{ contact.firstName }} {{ contact.lastName }}</td>
  			<td>{{ contact.email }}</td>
  			<td>{{ contact.phoneNumber }}</td>
- 			<td>{{ contact.status }}</td>
- 			<td><a routerLink="/detail/{{contact.id}}" (click)="onSelect(contact)">Edit</a><a (click)="delete(contact)">Delete</a></td>
+ 			<td class="status-value">{{ contact.status }}</td>
+ 			<td class="action-links"><a routerLink="/detail/{{contact.id}}" title="Edit" (click)="onSelect(contact)"><img src="assets/editicon.png" width="15" height="15"></a><a title="Delete" (click)="delete(contact)"><img src="assets/deleteicon.png" width="15" height="15"></a></td>
  		</tr>
  	</tbody>
-<!-- <ul class="heroes">
-  <li *ngFor="let contact of contacts">
-    <h2>{{ contact.firstName | uppercase }} {{ contact.lastName | uppercase }} Details</h2>
-	<div><span>First name: </span>{{ contact.firstName }}</div>
-	<div><span>Last name: </span>{{ contact.lastName }}</div>
-	<div><span>Email: </span>{{ contact.email }}</div>
-	<div><span>Phone Number: </span>{{ contact.phoneNumber }}</div>
-	<div><span>Status: </span>{{ contact.status }}</div>
-  </li>
-</ul> -->
 </table>
 </div>
 
 <app-contact-detail [contact]="selectedContact"></app-contact-detail>
 <app-contact-add></app-contact-add>
-
-
-	<!-- <label>First name:
-	      <input [(ngModel)]="contact.firstName" placeholder="first name">
-	    </label>
-	    <label>Last name:
-	      <input [(ngModel)]="contact.lastName" placeholder="last name">
-	    </label>
-	    <label>Email:
-	      <input type="email" [(ngModel)]="contact.email" placeholder="email">
-	    </label>
-	    <label>Phone number:
-	      <input type="tel" [(ngModel)]="contact.phoneNumber" placeholder="phone">
-	    </label> -->

@@ -1,24 +1,26 @@
-<div *ngIf="showOnAdd" class="contact-add">
+<div *ngIf="route.snapshot.routeConfig.path === 'add'" class="contact-add">
 	<h2>Add Contact</h2>
-	<label>First name:
-	  <input #contactfirstName placeholder="first name">
-	</label>
-	<label>Last name:
-	  <input #contactlastName placeholder="last name">
-	</label>
-	<label>Email:
-	  <input #contactemail type="email" placeholder="email">
-	</label>
-	<label>Phone number:
-	  <input #contactphoneNumber type="tel" placeholder="phone">
-	</label>
-	<label>Status:
-		<input type="radio" #contactstatus value="active" name="status">Active
-		<input type="radio" #contactstatus value="inactive" name="status">Inactive
-	</label>
+	<div class="form-wrapper">
+		<label><span>First name:</span>
+		  <input #contactfirstName placeholder="first name">
+		</label>
+		<label><span>Last name:</span>
+		  <input #contactlastName placeholder="last name">
+		</label>
+		<label><span>Email:</span>
+		  <input #contactemail type="email" placeholder="email">
+		</label>
+		<label><span>Phone number:</span>
+		  <input #contactphoneNumber type="tel" placeholder="phone">
+		</label>
+		<label><span>Status:</span>
+			<input type="radio" #contactstatus value="active" name="status">Active
+			<input type="radio" #contactstatus value="inactive" name="status">Inactive
+		</label>
+	</div>
 	<div class="action-buttons">
-		<button type="button" (click)="goBack()">Go Back</button>
-		<button type="button" (click)="add(contactfirstName.value,contactlastName.value,contactemail.value,contactphoneNumber.value,contactstatus.value);contactfirstName.value='';contactlastName.value='';contactemail.value='';contactphoneNumber.value='';contactstatus.value='';goBack()">Add</button>
+		<button type="button" class="go-back" (click)="goBack()">Go Back</button>
+		<button type="button" (click)="add(contactfirstName.value,contactlastName.value,contactemail.value,contactphoneNumber.value,contactstatus.value);contactfirstName.value='';contactlastName.value='';contactemail.value='';contactphoneNumber.value='';contactstatus.value=''">Add</button>
 	</div>
 </div>
 

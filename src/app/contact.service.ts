@@ -31,7 +31,7 @@ export class ContactService {
     const url = `${this.contactsUrl}/?id=${id}`;
     return this.http.get<Contacts[]>(url)
       .pipe(
-        map(contacts => contacts[0]), // returns a {0|1} element array
+        map(contacts => contacts[0]),
         tap(h => {
           const outcome = h ? `fetched` : `did not find`;
           this.log(`${outcome} contact id=${id}`);
@@ -75,7 +75,7 @@ export class ContactService {
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
-      console.error(error); 
+      //console.error(error); 
  
       this.log(`${operation} failed: ${error.message}`);
  
@@ -84,7 +84,7 @@ export class ContactService {
   }
 
   private log(message: string) {
-    console.log('ContactService: ' + message);
+    //console.log('ContactService: ' + message);
   }
 
 }

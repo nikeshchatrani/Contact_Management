@@ -2,7 +2,6 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
-import { showOnAdd } from '../contact-add';
 import { Contacts } from '../contacts';
 import { ContactService } from '../contact.service';
 
@@ -13,15 +12,13 @@ import { ContactService } from '../contact.service';
 })
 export class ContactAddComponent implements OnInit {
 
-  @Input() showonadd: showOnAdd;
-	
   contacts: Contacts[];
 
   constructor(
-  private route: ActivatedRoute,
+  public route: ActivatedRoute,
   private contactService: ContactService,
   private location: Location
-  ) { }
+  ) {  }
 
   ngOnInit() {
   	this.getContacts();
@@ -34,16 +31,19 @@ export class ContactAddComponent implements OnInit {
   getContacts(): void {
     this.contactService.getContacts()
         .subscribe(contacts => this.contacts = contacts);
-    this.showOnAdd : true;
   }
 
   add(firstName: string, lastName:string, email: string, phoneNumber: number, status: string): void {
   firstName = firstName.trim();
-  if (!firstName) { return; }
+  lastName = lastName.trim();
+  if (!firstName && !lastName ) {
+      return; 
+  }
   this.contactService.addContact({ firstName, lastName, email, phoneNumber, status } as Contacts)
     .subscribe(contact => {
       this.contacts.push(contact);
     });
-}
+    this.goBack();
+  }
 
 }
